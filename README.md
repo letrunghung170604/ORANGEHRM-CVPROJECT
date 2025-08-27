@@ -1,5 +1,7 @@
 **OrangeHRM Automation Testing🧪**
 
+**📌Overview**
+
 This project is an automated testing framework for the OrangeHRM web application, built with Selenium WebDriver, TestNG, and Java.  
 It tests core functionalities of the Admin and PIM modules, including user management, job titles, job categories, employment status, locations, and employee management.
 
@@ -50,7 +52,7 @@ The framework supports:
   - Add Employee: Create employees with login credentials.
   - Login Employee just created: Check invalid username, invalid password, and login success.
   - Search employees and verify table data (e.g., employee ID).
-- Login: Authenticate with admin credentials 🔐.
+- Login: Authenticate with admin credentials (Admin, admin123) 🔐.
 - Admin Module ⚙️:
   - Manage User Management, Job Titles, Job Category, Employment Status, Locations (Add, Edit, Delete, etc.).
   - Verify table data after operations.
