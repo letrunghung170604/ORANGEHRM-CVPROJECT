@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="OrangeHrm" verbose="1">
+
+    <parameter name="browserType" value="chrome" />
+    <parameter name="webURL" value="https://opensource-demo.orangehrmlive.com/" />
+
+    <test name="PIMTest">
+        <classes>
+            <class name="DoProject.TestCases.PIMTest"/>
+        </classes>
+    </test>
+
+    <test name="Tests" parallel="classes" thread-count="5">
+        <classes>
+            <class name="DoProject.TestCases.AdminUserManagementTest"/>
+            <class name="DoProject.TestCases.AdminJobTitleTest"/>
+            <class name="DoProject.TestCases.AdminJobCategoriesTest"/>
+            <class name="DoProject.TestCases.AdminEmploymentStatusTest"/>
+            <class name="DoProject.TestCases.AdminLocationTest"/>
+        </classes>
+    </test>
+</suite>
