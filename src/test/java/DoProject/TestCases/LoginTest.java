@@ -3,6 +3,7 @@ package DoProject.TestCases;
 import DoPrepare.Common.Listener;
 import DoPrepare.Common.SetUp;
 import DoPrepare.Help.CaptureHelp;
+import DoPrepare.Help.ExcelHelp;
 import DoProject.CommonFunctions.Functions;
 import DoProject.Pages.Login;
 import io.qameta.allure.Step;
@@ -18,6 +19,7 @@ public class LoginTest extends SetUp {
 
     private WebDriver driver;
     private Login login;
+    private ExcelHelp excelhelp;
 
 
     @BeforeMethod
@@ -25,6 +27,7 @@ public class LoginTest extends SetUp {
     {
         driver = getDriver();
         login = new Login(driver);
+        excelhelp = new ExcelHelp();
     }
 
     @AfterMethod
@@ -41,8 +44,9 @@ public class LoginTest extends SetUp {
 
     @Step
     @Test
-    public void loginTest () throws InterruptedException
+    public void loginTest () throws Exception
     {
-        login.doLogin("Admin", "admin123");
+        excelhelp.setExcelFile("src/main/resources/DataFile.xlsx", "LoginData");
+        login.doLogin(excelhelp.getCellData("USERNAME", 1), excelhelp.getCellData("PASSWORD", 1));
     }
 }
